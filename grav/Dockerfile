@@ -30,5 +30,7 @@ RUN curl -o grav.tar.gz -SL https://github.com/getgrav/grav/archive/${GRAV_VERSI
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
+USER www-data:www-data
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
